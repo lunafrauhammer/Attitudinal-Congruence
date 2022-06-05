@@ -4,6 +4,11 @@ title: 'Power Simulation: Metacognitive Effects of Attitudinal (In-)Congruence i
 author: "Luna Frauhammer"
 date: "6/1/2022"
 output: html_document
+navbar:
+  title: "Rmarkdown with navbar"                            
+  type: inverse
+  right:
+    - text: "Contact me"
 ---
 
 ```{r results="asis", echo = FALSE}

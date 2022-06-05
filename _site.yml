@@ -1,0 +1,15 @@
+name: "Rmarkdown with navbar"                                
+output_dir: "."
+navbar:
+  type: inverse
+  left: 
+    - text: "Attitudinal Congruence"
+      href: https://lunafrauhammer.github.io/Attitudinal_Congruence/  
+  right:
+    - text: "GitHub Project"
+      icon: fa-github
+      href: https://github.com/lunafrauhammer/Attitudinal_Congruence
+output:
+  html_document:
+    theme: readable
+    css: style.css
