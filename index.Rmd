@@ -2,5 +2,6 @@
 title: "Attitudinal Congruence"
 ---
  
-Test Index
-'arg' should be one of “default”, “bootstrap”, “cerulean”, “cosmo”, “darkly”, “flatly”, “journal”, “lumen”, “paper”, “readable”, “sandstone”, “simplex”, “spacelab”, “united”, “yeti”
+This is the main page for the Attitudinal Congruence Project. <br><br>
+You can find the power analysis [here](https://lunafrauhammer.github.io/Attitudinal_Congruence/Power_AP8_V6  ) <br>
+You can find all code in the corresponding [github project](https://github.com/lunafrauhammer/Attitudinal_Congruence)
