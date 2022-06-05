@@ -4,7 +4,11 @@ navbar:
   title: "Attitudinal Congruence"
   type: inverse
   left: 
+    - text: "Home"
+      icon: fa-home
+      href: https://lunafrauhammer.github.io/Attitudinal_Congruence
     - text: "Power Analysis"
+      icon: fa-bar-chart
       href: https://lunafrauhammer.github.io/Attitudinal_Congruence/Power_AP8_V6  
   right:
     - text: "GitHub Project"
