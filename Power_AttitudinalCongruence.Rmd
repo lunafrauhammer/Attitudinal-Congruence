@@ -1,12 +1,11 @@
 ---
-title: 'Power Simulation: Metacognitive Effects of Attitudinal (In-)Congruence in
-  Social Media on Political Participation'
+title: 'Power Simulation: Metacognitive Effects of Attitudinal (In)congruence'
 author: "Luna Frauhammer"
 date: "6/1/2022"
 output: html_document
 ---
 
-```{r results="asis", echo = FALSE}
+```{r, results="asis", echo = FALSE}
 cat("<style>
 .table-hover > tbody > tr:hover { 
   background-color:	#8db6cd;
@@ -21,29 +20,29 @@ library(kableExtra)
 ```
 
 
-This is the power simulation for the study "Metacognitive Effects of Attitudinal (In-)Congruence in Social Media on Political Participation". It estimates power for three hypotheses referring to effects of attitudinal congruence on subjective knowledge, effects of attitudinal congruence on political participation, and the relationship between these two variables. The two remaining hypotheses regarding processing fluency and perceived controversiality are not addressed separately since past literature does not allow adequate estimation of effects. However, we believe the calculated sample size to be large enough to detect any effects of practical relevance for these hypotheses as well. 
+This is the power simulation for the study "Explaining the Link between Attitudinal Congruence in Social Media and Political Participation: A Metacognitive Approach". It estimates power for three hypotheses referring to effects of attitudinal congruence on subjective knowledge, effects of attitudinal congruence on political participation, and the relationship between these two variables. The remaining hypotheses regarding processing fluency and perceived controversiality are not addressed separately since past literature does not allow adequate estimation of effects. However, we believe the calculated sample size to be large enough to detect any effects of practical relevance for these hypotheses as well. 
 <br>
 
 ### 1. Summary of Results
 
-Based on the below analyses, we want to collect data of 1,400 participants. Regarding the group differences, this allows the detection of small standardized effect sizes of 0.14 with power of 1 - $\beta$ $\approx$ .85. Regarding the regression hypothesis, this sample size allows the detection of a small standardized effect of b = 0.08 with power of 1 - $\beta$ $\approx$ 0.90. For a more detailed explanation of why we chose these values, which effects we expect, as well as exact power estimates, please consult the remaining document. <br>
+Based on the below analyses, we want to collect data of 1,200 participants. Regarding the group differences, this allows the detection of small standardized effect sizes of 0.15 with power of 1 - $\beta$ $\approx$ .80. Regarding the regression hypotheses, this sample size allows the detection of a small standardized effect of b = 0.08 with power of 1 - $\beta$ $\approx$ 0.85.  For a more detailed explanation of why we chose these values, which effects we expect, as well as exact power estimates, please consult the remaining document. <br>
 
 ### 2. Calculation and Detailed Explanation 
 
 Our estimates of the effect sizes are based on a paper of Wojcieszak et al. (2016), which we believe to be the published study most similar to our aim. See [section 3](#resultsW) for a summary of their effects. However, we assume our results will be somewhat larger than the results displayed in their paper for the following reasons: <br>
-Our study implements a different media context and therefore a different operationalization of the independent variable attitudinal congruence. The Wojcieszak paper presented the participants news articles that were written in a balanced, pro- or counter-attitudinal way. We present the participants social media news posts with opinionated user generated comments. We believe this manipulation to evoke stronger perceptions of attitudinal (in)congruence. Further, they do not only entail the opinion of one author but of several commenters. <br><br>
+Our study implements a different media context and therefore a different operationalization of the independent variable attitudinal congruence. The Wojcieszak paper presented the participants news articles that were written in a balanced, pro- or counter-attitudinal way. We present the participants social media news posts with opinionated user generated comments. We believe this manipulation to evoke stronger perceptions of attitudinal (in)congruence. Further, they do not only entail the opinion of one author but of several commenters. <br>
 
-Of course, we acknowledge that it would be best to achieve a sample size being able to detect the effects in the Wojcieszak paper as it is closest to our experiment. Due to limited ressources,this unfortunately is not possible, although we tried to choose a sample size that at least has reasonable power (>.60) also for these small effets. We further are still confident that our effects should be somewhat larger and that our sample size will suffice to detect any meaningful effects. 
+Since we cannot predict exact effect sizes, we chose to determine the smallest effect size of interest which we set at d = 0.15 for the group differences indicating a small effect (standardized Wojcieszak effects were around d $\approx$ 0.10 for SK and d $\approx$ 0.15 for PP). <br>
 To ensure full transparency and interpretability, we nonetheless report simulated power for the exact effects that Wojcieszak et al. (2016) observed in [section 2.2](#Wojcieszak) of this document. <br>
 
 #### 2.1 Power Simulation 
 
-The data is simulated so that there is a group difference in Subjective Knowledge of 0.2 units of measurement (1 - 7 scale, $sd_{SK}$ = 1.4, standardized = 0.14). Political Participation (PP) is simulated to partially depend on Subjective Knowledge (b = 0.09, standardized b = 0.084) but to also have a group difference of 0.24 units of measurement (1 - 7 scale, $sd_{PP}$ = 1.55) independent of Subjective Knowledge, resulting in an average group difference of 0.258 units of measurement (standardized = 0.17). <br>
-For the relationship between SK and PP we use the value observed by Wojcieszak et al. (2016). For the group differences, we use slightly higher values (again, see [section 2.2](#Wojcieszak) for the simulations using the exact Wojcieszak results).
+The data is simulated so that there is a group difference in Subjective Knowledge of 0.21 units of measurement (1 - 7 scale, $sd_{SK}$ = 1.4, standardized difference = 0.15). Political Participation (PP) is simulated to partially depend on Subjective Knowledge (b = 0.09, standardized b = 0.084) but to also have a group difference of 0.21 units of measurement (1 - 7 scale, $sd_{PP}$ = 1.55) independent of Subjective Knowledge, resulting in an average group difference of 0.23 units of measurement (standardized = 0.15). <br>
+For the relationship between SK and PP we use the same effect size observed by Wojcieszak et al. (2016) since this relationship does not depend on the experimental manipulation. For the group differences, we use slightly higher values (again, see [section 2.2](#Wojcieszak) for the simulations using the exact Wojcieszak results).
 
 ```{r}
 n <- m <- 500 # set group sizes, sample size = n + m
-nsim <- 1000 # number of simulations
+nsim <- 2000 # number of simulations
 p_SK <- rep(NA, nsim)
 p_PP <- rep(NA, nsim)
 p_Reg <- rep(NA, nsim)
@@ -57,11 +56,11 @@ Results <- data.frame(GroupSize = NA, SK = NA, PP = NA, Regression = NA)
 
 j <- 1
 
-while(power_SK < 0.85){
+while(power_SK < 0.8 | power_PP < 0.8 | power_PP < 0.85){
   for(i in 1:nsim){
     
     # Simulate data for subjective knowledge:
-    SK1 <- rnorm(n, mean = 5.3, sd = 1.4) # data group 1 (congruent)
+    SK1 <- rnorm(n, mean = 5.31, sd = 1.4) # data group 1 (congruent)
     SK2 <- rnorm(m, mean = 5.1, sd = 1.4) # data group 2 (incongruent)
     SK <- c(SK1, SK2)
     group <- rep(c(0, 1), c(n, m))
@@ -76,8 +75,8 @@ while(power_SK < 0.85){
     data <- data.frame(group, SK, PP) 
     
     # 2) simulate experimental effect independent from SK: 
-    data[data$group == 0, ]$PP <- data[data$group == 0, ]$PP + rnorm(n, 0.12, 0.1)
-    data[data$group == 1, ]$PP <- data[data$group == 1, ]$PP - rnorm(n, 0.12, 0.1)
+    data[data$group == 0, ]$PP <- data[data$group == 0, ]$PP + rnorm(n, 0.105, 0.1)
+    data[data$group == 1, ]$PP <- data[data$group == 1, ]$PP - rnorm(n, 0.105, 0.1)
     
     # perform hypothesis tests and extract p-value:
     p_PP[i] <- t.test(PP ~ group, data, var.equal = FALSE, alternative = "g")$p.value 
@@ -103,9 +102,10 @@ m <- m + 50
 
 ```{r, echo = FALSE, results='asis'}
 library(knitr)
-final_result <- which(Results$GroupSize == 700)
+final_result <- which(Results$SK > 0.80 & Results$PP > 0.80)[1]
+final_n <- Results[which(Results$SK > 0.80 & Results$PP > 0.80)[1], ]$GroupSize
 kable(Results, align = rep("l", ncol(Results))) %>%
-  row_spec(final_result, bold = T, background = "pink")  %>%
+  row_spec(final_result, bold = T, background = "#f9cee3")  %>%
   kable_styling(position = "left", bootstrap_options = c("striped", "hover")) 
 ```
 *Note.* The table shows the power for the group differeces in Subjective Knowledge (SK) and Political Participation (PP) as well as the regression of Subjective Knowledge on Political Participation (Regression) based on the group size (sample size = 2 * group size). The highlighted row represents the finally selected sample size. 
@@ -116,7 +116,7 @@ kable(Results, align = rep("l", ncol(Results))) %>%
 
 ```{r}
 n <- m <- 500 # set group sizes, sample size = n + m
-nsim <- 1000 # number of simulations
+nsim <- 2000 # number of simulations
 p_SK <- rep(NA, nsim)
 p_PP <- rep(NA, nsim)
 p_Reg <- rep(NA, nsim)
@@ -130,7 +130,7 @@ Results <- data.frame(GroupSize = NA, SK = NA, PP = NA, Regression = NA)
 
 j <- 1
 
-while(power_SK < 0.8 | power_PP < 0.8){
+while(power_SK < 0.8 | power_PP < 0.8 | power_PP < 0.8){
   for(i in 1:nsim){
     
     # Simulate data for subjective knowledge:
@@ -177,12 +177,12 @@ m <- m + 50
 
 ```{r, echo = FALSE, results='asis'}
 library(knitr)
-final_result <- which(Results$GroupSize == 700)
+final_result <- which(Results$GroupSize == final_n)
 kable(Results, align = rep("l", ncol(Results))) %>%
-  row_spec(final_result, bold = T, background = "pink")  %>%
+  row_spec(final_result, bold = T, background = "#f9cee3")  %>%
   kable_styling(position = "left", bootstrap_options = c("striped", "hover")) 
 ```
-*Note.* The table shows the power for the group differeces in Subjective Knowledge (SK) and Political Participation (PP) as well as the regression of Subjective Knowledge on Political Participation (Regression) based on the group size (sample size = 2 * group size). The highlighted row represents the finally selected sample size. 
+*Note.* The table shows the power for the group differeces in Subjective Knowledge (SK) and Political Participation (PP) as well as the regression of Subjective Knowledge on Political Participation (Regression) depending on the group size (sample size = 2 * group size). The highlighted row represents the finally selected sample size. 
 
 <br>
 
