@@ -3,5 +3,5 @@ title: "Attitudinal Congruence"
 ---
  
 This is the main page for the Attitudinal Congruence Project. <br><br>
-You can find the power analysis [here](https://lunafrauhammer.github.io/Attitudinal_Congruence/Power ) <br>
+You can find the power analysis [here](https://lunafrauhammer.github.io/Attitudinal_Congruence/Power) <br>
 You can find all code in the corresponding [github project](https://github.com/lunafrauhammer/Attitudinal_Congruence)
