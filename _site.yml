@@ -9,7 +9,7 @@ navbar:
       href: https://lunafrauhammer.github.io/Attitudinal_Congruence
     - text: "Power Analysis"
       icon: fa-bar-chart
-      href: https://lunafrauhammer.github.io/Attitudinal_Congruence/Power_AP8_V6  
+      href: https://lunafrauhammer.github.io/Attitudinal_Congruence/Power
   right:
     - text: "GitHub Project"
       icon: fa-github
