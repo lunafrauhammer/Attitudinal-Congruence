@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Power Simulation: Metacognitive Effects of Attitudinal (In)congruence</title>
+
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/readable.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Attitudinal Congruence</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="https://lunafrauhammer.github.io/Attitudinal_Congruence">
+    <span class="fa fa-home"></span>
+     
+    Home
+  </a>
+</li>
+<li>
+  <a href="https://lunafrauhammer.github.io/Attitudinal_Congruence/Power">
+    <span class="fa fa-bar-chart"></span>
+     
+    Power Analysis
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/lunafrauhammer/Attitudinal_Congruence">
+    <span class="fa fa-github"></span>
+     
+    GitHub Project
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Power Simulation: Metacognitive Effects of Attitudinal (In)congruence</h1>
+
+</div>
+
+
+<style>
+.table-hover > tbody > tr:hover { 
+  background-color: #8db6cd;
+}
+</style>
+<p><em>This is an anonymized version of this document</em> <br> This is the power simulation for the study “Explaining the Link between Attitudinal Congruence in Social Media and Political Participation: A Metacognitive Approach”. It estimates power for three hypotheses referring to effects of attitudinal congruence on subjective knowledge, effects of attitudinal congruence on political participation, and the relationship between these two variables. The remaining hypotheses regarding processing fluency and perceived controversiality are not addressed separately since past literature does not allow adequate estimation of effects. However, we believe the calculated sample size to be large enough to detect any effects of practical relevance for these hypotheses as well. <br></p>
+<div id="summary-of-results" class="section level3">
+<h3>1. Summary of Results</h3>
+<p>Based on the below analyses, we want to collect data of 1,200 participants. Regarding the group differences, this allows the detection of small standardized effect sizes of 0.15 with power of 1 - <span class="math inline">\(\beta\)</span> <span class="math inline">\(\approx\)</span> .80. Regarding the regression hypotheses, this sample size allows the detection of a small standardized effect of b = 0.08 with power of 1 - <span class="math inline">\(\beta\)</span> <span class="math inline">\(\approx\)</span> 0.85. For a more detailed explanation of why we chose these values, which effects we expect, as well as exact power estimates, please consult the remaining document. <br></p>
+</div>
+<div id="calculation-and-detailed-explanation" class="section level3">
+<h3>2. Calculation and Detailed Explanation</h3>
+<p>Our estimates of the effect sizes are based on a paper of Wojcieszak et al. (2016), which we believe to be the published study most similar to our aim. See <a href="#resultsW">section 3</a> for a summary of their effects. However, we assume that our results will be somewhat larger than the results displayed in their paper for the following reasons: <br> Our study implements a different media context and therefore a different operationalization of the independent variable attitudinal congruence. The Wojcieszak paper presented the participants news articles that were written in a balanced, pro- or counter-attitudinal way. We present the participants social media news posts with opinionated user generated comments. We believe this manipulation to evoke stronger perceptions of attitudinal (in)congruence. Also, they do not only entail the opinion of one author but of several commenters. Finally, the Wojcieszak paper contrasted the pro-and counter-attitudinal conditions with a balanced condition, while our main analyses directly compare those two conditions. <br></p>
+<p>Since we cannot predict exact effect sizes, we chose to determine the smallest effect size of interest (SESOI) while still considering the effects of the Wojcieszak paper to get a realistic estimate. We set the SESOI at d = 0.15 for the group differences indicating a small effect (standardized Wojcieszak effects were around d <span class="math inline">\(\approx\)</span> 0.10 for SK and d <span class="math inline">\(\approx\)</span> 0.15 for PP). For the relationship between Subjective Knowledge and Political Participation, we expect to find the same relationship as Wojcieszak et al. (2016), since this effect does not depend on the experimental manipulation.<br> To ensure full transparency and interpretability, we nonetheless report simulated power for the effects that Wojcieszak et al. (2016) observed in <a href="#Wojcieszak">section 2.2</a> of this document. <br></p>
+<div id="power-simulation" class="section level4">
+<h4>2.1 Power Simulation</h4>
+<p>The data is simulated so that there is a group difference in Subjective Knowledge of 0.21 units of measurement (1 - 7 scale, <span class="math inline">\(sd_{SK}\)</span> = 1.4, standardized difference = 0.15). Political Participation (PP) is simulated to partially depend on Subjective Knowledge (b = 0.09, standardized b = 0.084) but to also have a group difference of 0.21 units of measurement (1 - 7 scale, <span class="math inline">\(sd_{PP}\)</span> = 1.55) independent of Subjective Knowledge, resulting in an average group difference of 0.23 units of measurement (standardized = 0.15). <br> For the relationship between SK and PP we use the same effect size observed by Wojcieszak et al. (2016) since this relationship does not depend on the experimental manipulation. For the group differences, we use slightly higher values (again, see <a href="#Wojcieszak">section 2.2</a> for the simulations using the exact Wojcieszak results).</p>
+<pre class="r"><code>n &lt;- m &lt;- 500 # set group sizes, sample size = n + m
+nsim &lt;- 2000 # number of simulations
+p_SK &lt;- rep(NA, nsim)
+p_PP &lt;- rep(NA, nsim)
+p_Reg &lt;- rep(NA, nsim)
+beta &lt;- rep(NA, nsim)
+Effect_PP &lt;- rep(NA, nsim)
+sd_PP &lt;- rep(NA, nsim)
+beta_SK &lt;- rep(NA, nsim)
+power_SK &lt;- power_PP &lt;- power_Reg &lt;- 0
+
+Results &lt;- data.frame(GroupSize = NA, SK = NA, PP = NA, Regression = NA)
+
+j &lt;- 1
+
+while(power_SK &lt; 0.8 | power_PP &lt; 0.8 | power_Reg &lt; 0.85){
+  for(i in 1:nsim){
+    
+    # Simulate data for subjective knowledge:
+    SK1 &lt;- rnorm(n, mean = 5.31, sd = 1.4) # data group 1 (congruent)
+    SK2 &lt;- rnorm(m, mean = 5.1, sd = 1.4) # data group 2 (incongruent)
+    SK &lt;- c(SK1, SK2)
+    group &lt;- rep(c(0, 1), c(n, m))
+    
+    # Simulate data for political participation: 
+    # 1) simulate relationship between SK and PP
+    PP &lt;- 2.8 + 0.09 * SK + rnorm(n = n + m, mean = 0, sd = 1.55)
+    # PP = intercept + b1 * SK + e 
+    # intercept and b1 are adopted from Wojcieszak et al. (2016)
+    # residual variance is set so that the PP variance is around 1.55
+    
+    data &lt;- data.frame(group, SK, PP) 
+    
+    # 2) simulate experimental effect independent from SK: 
+    data[data$group == 0, ]$PP &lt;- data[data$group == 0, ]$PP + rnorm(n, 0.105, 0.1)
+    data[data$group == 1, ]$PP &lt;- data[data$group == 1, ]$PP - rnorm(n, 0.105, 0.1)
+    
+    # perform hypothesis tests and extract p-value:
+    p_PP[i] &lt;- t.test(PP ~ group, data, var.equal = FALSE, alternative = &quot;g&quot;)$p.value 
+    p_SK[i] &lt;- t.test(SK ~ group, data, var.equal = FALSE, alternative = &quot;g&quot;)$p.value
+    p_Reg[i] &lt;- coef(summary(lm(PP ~ SK, data = data)))[&quot;SK&quot;, &quot;Pr(&gt;|t|)&quot;]
+    
+  }
+  
+power_SK &lt;- mean(p_SK &lt; 0.05) # Power: group difference Subjective Knowledge
+power_PP &lt;- mean(p_PP &lt; 0.05) # Power: group difference Political Participation
+power_Reg &lt;- mean(p_Reg &lt; 0.05)
+Results[j, ] &lt;- c(n, power_SK, power_PP, power_Reg)
+
+j &lt;- j + 1
+n &lt;- n + 50 # increase group size
+m &lt;- m + 50
+}</code></pre>
+<p><br></p>
+<div id="results" class="section level5">
+<h5>Results:</h5>
+<table class="table table-striped table-hover" style>
+<thead>
+<tr>
+<th style="text-align:left;">
+GroupSize
+</th>
+<th style="text-align:left;">
+SK
+</th>
+<th style="text-align:left;">
+PP
+</th>
+<th style="text-align:left;">
+Regression
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+500
+</td>
+<td style="text-align:left;">
+0.766
+</td>
+<td style="text-align:left;">
+0.7540
+</td>
+<td style="text-align:left;">
+0.7695
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+550
+</td>
+<td style="text-align:left;">
+0.791
+</td>
+<td style="text-align:left;">
+0.7695
+</td>
+<td style="text-align:left;">
+0.8145
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;background-color: #f9cee3 !important;">
+600
+</td>
+<td style="text-align:left;font-weight: bold;background-color: #f9cee3 !important;">
+0.831
+</td>
+<td style="text-align:left;font-weight: bold;background-color: #f9cee3 !important;">
+0.8215
+</td>
+<td style="text-align:left;font-weight: bold;background-color: #f9cee3 !important;">
+0.8570
+</td>
+</tr>
+</tbody>
+</table>
+<p><em>Note.</em> The table shows the power for the group differeces in Subjective Knowledge (SK) and Political Participation (PP) as well as the regression of Subjective Knowledge on Political Participation (Regression) based on the group size (sample size = 2 * group size). The highlighted row represents the finally selected sample size.</p>
+<p><br></p>
+</div>
+</div>
+<div id="Wojcieszak" class="section level4">
+<h4>2.2 Power Simulation for Effects Observed in Wojcieszak et al. (2016)</h4>
+<pre class="r"><code>n &lt;- m &lt;- 500 # set group sizes, sample size = n + m
+nsim &lt;- 2000 # number of simulations
+p_SK &lt;- rep(NA, nsim)
+p_PP &lt;- rep(NA, nsim)
+p_Reg &lt;- rep(NA, nsim)
+beta &lt;- rep(NA, nsim)
+Effect_PP &lt;- rep(NA, nsim)
+sd_PP &lt;- rep(NA, nsim)
+beta_SK &lt;- rep(NA, nsim)
+power_SK &lt;- power_PP &lt;- power_Reg &lt;- 0
+
+Results &lt;- data.frame(GroupSize = NA, SK = NA, PP = NA, Regression = NA)
+
+j &lt;- 1
+
+while(power_SK &lt; 0.8 | power_PP &lt; 0.8 | power_Reg &lt; 0.8){
+  for(i in 1:nsim){
+    
+    # Simulate data for subjective knowledge:
+    SK1 &lt;- rnorm(n, mean = 5.25, sd = 1.42) # data group 1 (congruent)
+    SK2 &lt;- rnorm(m, mean = 5.1, sd = 1.42) # data group 2 (incongruent)
+    SK &lt;- c(SK1, SK2)
+    group &lt;- rep(c(0, 1), c(n, m))
+    
+    # Simulate data for political participation: 
+    # 1) simulate relationship between SK and PP
+    PP &lt;- 2.8 + 0.09 * SK + rnorm(n = n + m, mean = 0, sd = 1.55)
+    # PP = intercept + b1 * SK + e 
+    # intercept and b1 are taken from Wojcieszak et al. (2016)
+    # residual variance is set so that the PP variance is around 1.55
+    
+    data &lt;- data.frame(group, SK, PP) 
+    
+    # 2) simulate experimental effect independent from SK: 
+    data[data$group == 0, ]$PP &lt;- data[data$group == 0, ]$PP + rnorm(n, 0.1, 0.1)
+    data[data$group == 1, ]$PP &lt;- data[data$group == 1, ]$PP - rnorm(n, 0.1, 0.1)
+    
+    # perform hypothesis tests and extract p-value:
+    p_PP[i] &lt;- t.test(PP ~ group, data, var.equal = FALSE, alternative = &quot;g&quot;)$p.value 
+    p_SK[i] &lt;- t.test(SK ~ group, data, var.equal = FALSE, alternative = &quot;g&quot;)$p.value
+    p_Reg[i] &lt;- coef(summary(lm(PP ~ SK, data = data)))[&quot;SK&quot;, &quot;Pr(&gt;|t|)&quot;]
+  }
+  
+power_SK &lt;- mean(p_SK &lt; 0.05) # Power: group difference Subjective Knowledge
+power_PP &lt;- mean(p_PP &lt; 0.05) # Power: group difference Political Participation
+power_Reg &lt;- mean(p_Reg &lt; 0.05)
+
+Results[j, ] &lt;- c(n, power_SK, power_PP, power_Reg)
+
+j &lt;- j + 1
+n &lt;- n + 50 # increase group size
+m &lt;- m + 50
+}</code></pre>
+<p><br></p>
+<div id="results-1" class="section level5">
+<h5>Results:</h5>
+<table class="table table-striped table-hover" style>
+<thead>
+<tr>
+<th style="text-align:left;">
+GroupSize
+</th>
+<th style="text-align:left;">
+SK
+</th>
+<th style="text-align:left;">
+PP
+</th>
+<th style="text-align:left;">
+Regression
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+500
+</td>
+<td style="text-align:left;">
+0.5035
+</td>
+<td style="text-align:left;">
+0.6900
+</td>
+<td style="text-align:left;">
+0.7650
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+550
+</td>
+<td style="text-align:left;">
+0.5390
+</td>
+<td style="text-align:left;">
+0.7240
+</td>
+<td style="text-align:left;">
+0.8185
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;background-color: #f9cee3 !important;">
+600
+</td>
+<td style="text-align:left;font-weight: bold;background-color: #f9cee3 !important;">
+0.5790
+</td>
+<td style="text-align:left;font-weight: bold;background-color: #f9cee3 !important;">
+0.7680
+</td>
+<td style="text-align:left;font-weight: bold;background-color: #f9cee3 !important;">
+0.8415
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+650
+</td>
+<td style="text-align:left;">
+0.6190
+</td>
+<td style="text-align:left;">
+0.8085
+</td>
+<td style="text-align:left;">
+0.8740
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+700
+</td>
+<td style="text-align:left;">
+0.6385
+</td>
+<td style="text-align:left;">
+0.8200
+</td>
+<td style="text-align:left;">
+0.8815
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+750
+</td>
+<td style="text-align:left;">
+0.6490
+</td>
+<td style="text-align:left;">
+0.8215
+</td>
+<td style="text-align:left;">
+0.8955
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+800
+</td>
+<td style="text-align:left;">
+0.6705
+</td>
+<td style="text-align:left;">
+0.8635
+</td>
+<td style="text-align:left;">
+0.9265
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+850
+</td>
+<td style="text-align:left;">
+0.7125
+</td>
+<td style="text-align:left;">
+0.8850
+</td>
+<td style="text-align:left;">
+0.9425
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+900
+</td>
+<td style="text-align:left;">
+0.7295
+</td>
+<td style="text-align:left;">
+0.8920
+</td>
+<td style="text-align:left;">
+0.9585
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+950
+</td>
+<td style="text-align:left;">
+0.7345
+</td>
+<td style="text-align:left;">
+0.9085
+</td>
+<td style="text-align:left;">
+0.9600
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1000
+</td>
+<td style="text-align:left;">
+0.7470
+</td>
+<td style="text-align:left;">
+0.9160
+</td>
+<td style="text-align:left;">
+0.9750
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1050
+</td>
+<td style="text-align:left;">
+0.7950
+</td>
+<td style="text-align:left;">
+0.9440
+</td>
+<td style="text-align:left;">
+0.9675
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1100
+</td>
+<td style="text-align:left;">
+0.7985
+</td>
+<td style="text-align:left;">
+0.9380
+</td>
+<td style="text-align:left;">
+0.9770
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1150
+</td>
+<td style="text-align:left;">
+0.7990
+</td>
+<td style="text-align:left;">
+0.9440
+</td>
+<td style="text-align:left;">
+0.9845
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+1200
+</td>
+<td style="text-align:left;">
+0.8265
+</td>
+<td style="text-align:left;">
+0.9620
+</td>
+<td style="text-align:left;">
+0.9895
+</td>
+</tr>
+</tbody>
+</table>
+<p><em>Note.</em> The table shows the power for the group differeces in Subjective Knowledge (SK) and Political Participation (PP) as well as the regression of Subjective Knowledge on Political Participation (Regression) depending on the group size (sample size = 2 * group size). The highlighted row represents the finally selected sample size.</p>
+<p><br></p>
+</div>
+</div>
+<div id="resultsW" class="section level4">
+<h4>3. Effects Reported by Wojcieszak et al. (2016):</h4>
+<p>Subjective Knowledge: <br> M = 5.2, SD = 1.42, relationship SK ~ pro attitudinal exposure: a = 0.15 (0.05) <br><br> Political Participation: <br> M = 3.36, SD = 1.55, <br> Group Means (circa): M_balanced = 3.32, M_pro = 3.56, M_counter = 3.34 <br> Relationship PP ~ pro attitudinal exposure: b = .20 (.06) <br><br> Relationship PP ~ SK: b = 0.09 (0.02)</p>
+<p><br></p>
+</div>
+<div id="literature" class="section level4">
+<h4>4. Literature</h4>
+<p>Wojcieszak, M., Bimber, B., Feldman, L., &amp; Stroud, N. J. (2016). Partisan news and political participation: Exploring mediated relationships. <em>Political Communication, 33</em>(2), 241-260.</p>
+</div>
+</div>
+
+<br> 
+
+<hr />
+<small> Created by <a href = "https://lunafrauhammer.github.io/">Luna Frauhammer</a></small>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
