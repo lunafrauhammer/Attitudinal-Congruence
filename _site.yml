@@ -6,14 +6,14 @@ navbar:
   left: 
     - text: "Home"
       icon: fa-home
-      href: https://lunafrauhammer.github.io/Attitudinal_Congruence
+      href: https://lunafrauhammer.github.io/Attitudinal-Congruence
     - text: "Power Analysis"
       icon: fa-bar-chart
-      href: https://lunafrauhammer.github.io/Attitudinal_Congruence/Power
+      href: https://lunafrauhammer.github.io/Attitudinal-Congruence/Power
   right:
     - text: "GitHub Project"
       icon: fa-github
-      href: https://github.com/lunafrauhammer/Attitudinal_Congruence
+      href: https://github.com/lunafrauhammer/Attitudinal-Congruence
 output:
   html_document:
     theme: readable
